@@ -1,4 +1,5 @@
 @echo off
+set PYTHON_EXECUTABLE=%CD%\py310\python.exe
 set PYTHONPATH=%CD%\src
 set PATH=%PATH%;%CD%\ffmpeg\bin\;%CD%\py310\;%CD%\py310\Scripts
 set HF_ENDPOINT=https://hf-mirror.com
