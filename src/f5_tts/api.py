@@ -65,7 +65,7 @@ class F5TTS:
         repo_name, ckpt_step, ckpt_type = "F5-TTS", 1250000, "safetensors"
 
         # override for previous models
-        if model == "F5TTS_Base":
+        if model == "F5TTS_Base" or model == "F5TTS_v1_Base":
             if self.mel_spec_type == "vocos":
                 ckpt_step = 1200000
             elif self.mel_spec_type == "bigvgan":
@@ -116,6 +116,7 @@ class F5TTS:
         file_spec=None,
         seed=None,
     ):
+        self.seed=seed
         if seed is None:
             self.seed = random.randint(0, sys.maxsize)
         seed_everything(self.seed)

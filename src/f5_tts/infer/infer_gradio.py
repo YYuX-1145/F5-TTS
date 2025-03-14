@@ -811,7 +811,7 @@ If you're having issues, try converting your reference audio to WAV or MP3, clip
             value=load_last_used_custom()[0],
             allow_custom_value=True,
             label="Model: local_path | hf://user_id/repo_id/model_ckpt",
-            visible=False,
+            visible=True,
         )
         custom_vocab_path = gr.Dropdown(
             choices=[DEFAULT_TTS_MODEL_CFG[1]],
@@ -924,4 +924,4 @@ if __name__ == "__main__":
     if not USING_SPACES:
         main()
     else:
-        app.queue().launch()
+        app.queue().launch(inbrowser=True)
